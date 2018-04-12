@@ -101,7 +101,7 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
 | Layer         		                          |     Description	        			            		| 
-|:-------------------------------------------:|:---------------------------------------------:| 
+|:-------------------------------------------|:---------------------------------------------:| 
 | Input         	                      	    | 160x320x3 RGB image   					          		| 
 | cropping2d_1 (Cropping2D)                 	| cropping=((60,25), (0,0)),  outputs 75x320x3 	|
 | lambda_1 (Resize to 66x200x3)             	| outputs 66x200x3                            	|
@@ -132,7 +132,7 @@ The final model architecture (model.py lines 18-24) consisted of a convolution n
 |				            		|											|
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
-
+![Model on New Images](./new_images.jpg)
 ![NVIDIA CNN Model Architecture](./NVIDIA_CNN_Model_Architecture.jpg)
 
 #### 3. Creation of the Training Set & Training Process
