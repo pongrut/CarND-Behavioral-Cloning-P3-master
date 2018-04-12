@@ -1,10 +1,14 @@
 # **Behavioral Cloning** 
+---
 
+Pongrut Palarpong  
+April 16, 2018
+
+---
 ## Writeup Template
 
 ### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
 
----
 
 **Behavioral Cloning Project**
 
@@ -96,9 +100,30 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x3 RGB image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
+| RELU					|outputs 28x28x6|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16 	|
+| RELU					|10x10x16|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten		| outputs 400       									|
+| Fully connected		| outputs 120	|
+| RELU					|outputs 120|
+| Dropout					|outputs 120|
+| Fully connected		| outputs 84	|
+| RELU					| outputs 84	|
+| Dropout					| outputs 84	|
+| Fully connected		| outputs 43	|									|
+| Softmax				| outputs 43	|
+|						|												|
+|						|												|
+
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
-![alt text][image1]
+![NVIDIA CNN Model Architecture](./NVIDIA CNN Model Architecture.jpg)
 
 #### 3. Creation of the Training Set & Training Process
 
