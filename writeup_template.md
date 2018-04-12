@@ -132,8 +132,9 @@ The final model architecture (model.py lines 18-24) consisted of a convolution n
 |				            		|											|
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
-![Model on New Images](./new_images.jpg)
 ![NVIDIA CNN Model Architecture](./NVIDIA_CNN_Model_Architecture.jpg)
+
+[NVidia CNN Model Architecture](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)
 
 #### 3. Creation of the Training Set & Training Process
 
