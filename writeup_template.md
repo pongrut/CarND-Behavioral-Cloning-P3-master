@@ -140,13 +140,17 @@ Here is a visualization of the architecture (note: visualizing the architecture 
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
-![alt text][image2]
+
+![counterclockwise_1](./driving_log_L1.gif)
+![counterclockwise_2](./driving_log_L3.gif)
+![counterclockwise_3](./driving_log_L8_FIX.gif)
 
 I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
 
 ![alt text][image3]
 ![alt text][image4]
 ![alt text][image5]
+![recover_left](./recover_left.gif)
 
 Then I repeated this process on track two in order to get more data points.
 
