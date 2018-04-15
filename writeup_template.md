@@ -5,10 +5,6 @@ Pongrut Palarpong
 April 16, 2018
 
 ---
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 
 **Behavioral Cloning Project**
 
@@ -58,9 +54,9 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
+My model consists of 1 Cropping2D layer for cropping input images to 75x320x3 shape and 2 Keras lamda layers for resizing to 66x200x3 and then zero-mean normalization. There are five convolution neural layers with 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines xx-yy) then the Flatten layer, after that four fully connected layer and finally the output layer (code lines xx-yy).
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+The model includes elu layers to introduce nonlinearity, and the input data of each layer is normalized by Batch normalization layers to reduce the amount by what the hidden unit values shift around (covariance shift).
 
 #### 2. Attempts to reduce overfitting in the model
 
