@@ -74,7 +74,8 @@ The model used an adam optimizer, so the learning rate was not tuned manually (m
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
+Training data was chosen to keep the vehicle driving on the road. 
+I used a combination of center lane driving at low speed, driving at max speed and try to control the vehicle in the lane, making with poor driving behavior, recovering from the left of the road, and focusing on curvatures situations. The driving logs did in both counterclockwise and clockwise directions
 
 For details about how I created the training data, see the next section. 
 
