@@ -96,8 +96,8 @@ The final model architecture (model.py lines 370-408) consisted of a convolution
 | Layer         		                          |     Description	        			            		| 
 |:-------------------------------------------|:---------------------------------------------:| 
 | Input         	                      	    | 160x320x3 RGB image   					          		| 
-| cropping2d_1 (Cropping2D)                 	| cropping=((60,25), (0,0)),  outputs 75x320x3 	|
-| lambda_2 (Normalization & Zero Mean)      	| outputs 66x200x3                            	|
+| cropping2d_1 (Cropping2D)                 	| cropping=((69,25), (60,60)),  outputs 75x320x3 	|
+| lambda_1 (Normalization & Zero Mean)      	| outputs 66x200x3                            	|
 | conv2d_1 (Convolution 5x5)	                | 2x2 stride, elu activation, outputs 31x98x24  |
 | batch_normalization_1 (Batch Normalization) | outputs 31x98x24                              |
 | conv2d_2 (Convolution 5x5)	                | 2x2 stride, elu activation, outputs 14x47x36  |
@@ -145,7 +145,8 @@ I then recorded the vehicle recovering from the left side of the road back to ce
 ![recover_left](./recover_left.gif)
 
 
-
+![raw_data](./org_dataset.jpg)
+Histogram of 23,790 steering angles and Density curve.
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
@@ -155,12 +156,16 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 Etc ....
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-![raw_data](./org_dataset.jpg)
-<img src="./org_dataset.jpg" alt="raw_data" style="width: 200px;"/>
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
+I finally randomly shuffled the data set and put 20% of the data into a validation set.
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+After the preserved 20% of data for validation set, I had 19,032 number of training data points. 
+I then preprocessed this data by using generator function. The generator performs image augmentation for each batch then pass the data to do image cropping and zero mean normailzation in first 2 layers of the network.
 
-Adaptive gradient descent algorithms such as Adagrad, Adadelta, RMSprop, Adam, provide an alternative to classical SGD. These per-parameter learning rate methods provide heuristic approach without requiring expensive work in tuning hyperparameters for the learning rate schedule manually. Adam is an update to the RMSProp optimizer which is like RMSprop with momentum.
+
+ 
+
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 10 as evidenced by the val_loss and loss seem to converge at 10 epochs which shown in the chart below. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+![loss_chart](./losses.jpg)
+Validation Loss vs. Training Loss during training process.
