@@ -64,10 +64,10 @@ Ref:
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 396, 405).
-In image augmentation processes, it also have a process of adding noise to inputs randomly like to forcing the network to not change the output in the wide range of inputs. It adds robustness against overfitting to the model.
+The model contains dropout layers in order to reduce overfitting (model.py lines 396, 405).<br/>
+In image augmentation processes, it have a process of adding noise to inputs randomly like to forcing the network to not change the output in the wide range of inputs, and also the training data sets contains poor driving behavior. These adds robustness against overfitting to the model.
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 542). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 
 #### 3. Model parameter tuning
