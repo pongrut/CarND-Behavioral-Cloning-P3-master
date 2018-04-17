@@ -146,7 +146,7 @@ I then recorded the vehicle recovering from the left side of the road back to ce
 
 
 ![raw_data](./org_dataset.jpg)
-Histogram of 23,790 steering angles and Density curve.
+<p align="center">Histogram of 23,790 steering angles and Density curve.</p>
 
 To augment the dataset, I used the transformation_pipline function for processing image augmentations as in table below:
 
@@ -161,10 +161,14 @@ To augment the dataset, I used the transformation_pipline function for processin
 
 ![original_img](./original_img.jpg)![left_flip](./left_flip.jpg)![right_flip](./right_flip.jpg)
 <p align="center">Flip left and right view: corrected steering angle -steering angle</p>
-![alt text][image7]
-Random shearing: corrected steering angle: -1.0°
-
-
+![original_img](./original_img.jpg)<br/>
+<p align="center">Random Perspective Transform: corrected steering angle: -1.0°</p>
+![original_img](./original_img.jpg)
+<p align="center">Random Rotate Transform: corrected steering angle: -1.0°</p>
+![original_img](./original_img.jpg)
+<p align="center">Random Translate Transform: corrected steering angle: -1.0°</p>
+![original_img](./original_img.jpg)
+<p align="center">Random Noise Adding: corrected steering angle: -1.0°</p>
 Etc ....
 
 
