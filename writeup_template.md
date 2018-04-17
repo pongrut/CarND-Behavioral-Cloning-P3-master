@@ -132,21 +132,18 @@ Here is a visualization of the architecture:
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
-
 ![counterclockwise_1](./driving_log_L1.gif)
 ![counterclockwise_2](./driving_log_L7.gif) <br/>
-good driving behavior<br/>
+Normal driving behavior<br/>
 ![counterclockwise_3](./driving_log_L3.gif) <br/>
-poor driving behavior <br/>
+Poor driving behavior <br/>
 ![counterclockwise_4](./driving_log_L8_FIX.gif)<br/>
-fix curvature driving <br/>
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+Fix curvature road driving <br/>
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+I then recorded the vehicle recovering from the left side of the road back to center so that the vehicle would learn to recover when it off the track. This images show what a recovery looks like starting from side track and back to the road:
 ![recover_left](./recover_left.gif)
 
+![raw_data](./org_dataset.jpg)
 Then I repeated this process on track two in order to get more data points.
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
