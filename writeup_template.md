@@ -166,7 +166,7 @@ To augment the dataset, I used the transformation_pipline function for processin
 ![traslate_img](./figures/transform_img_2.jpg)<br/>
 ![noisy_img](./figures/noisy_img.jpg)<br/>
 
-
+Based on the estimation, the total number of data generated from the generator is 250,015 data points.
 ![estimated_data](./figures/generator_dataset.jpg)
 <p align="center"> Histogram of 250,015 steering angles and Density curve (Estimated Generator's Dataset).</p>
 
