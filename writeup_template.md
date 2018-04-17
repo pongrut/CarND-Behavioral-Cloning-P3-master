@@ -45,15 +45,15 @@ Ref:
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 396, 405).<br/>
-In image augmentation processes, it have a process of adding noise to inputs randomly like to forcing the network to not change the output in the wide range of inputs, and also contains the poor driving behavior training dataset so the model can learn variety inputs that generate the same output. These adds robustness against overfitting to the model.
+The model contains dropout layers to minimize overfitting (model.py lines 396, 405).
+In image augmentation processes, it has a method of adding noise to inputs randomly like to force the network not to change the output in the full range of data, and also contains the poor driving behavior training dataset so the model can learn variety inputs that generate the same output. These add robustness against overfitting to the model.
 
-The model was trained and validated on different datasets to ensure that the model was not overfitting (code line 542). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different datasets to ensure that the model was not overfitting (code line 542). The model was tested by running it through the simulator and providing that the vehicle could stay on the track.
 
 
 #### 3. Model parameter tuning
 
-The model used an adam optimizer with default learning rate, so the learning rate was not tuned manually (model.py line 447).
+The model used an Adam optimizer with default learning rate, so the learning rate was not tuned manually (model.py line 447).
 
 |     Hyper Parameters      |     Value      |                      Remark                    | 
 |:--------------------------|:--------------:| :----------------------------------------------| 
@@ -66,8 +66,7 @@ The model used an adam optimizer with default learning rate, so the learning rat
 
 #### 4. Appropriate training data
 
-Training data was chosen to keep the vehicle driving on the road. 
-I used a combination of center lane driving at low speed, driving at max speed and try to control the vehicle in the lane, making with poor driving behavior, recovering from the left of the road, and focusing on curvatures situations. The driving logs did in both counterclockwise and clockwise directions
+Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving at low speed, driving at max speed and try to control the car in the lane, making with poor driving behavior, recovering from the left of the road, and focusing on curvatures situations. The driving logs did in both counterclockwise and clockwise directions.
 
 For details about how I created the training data, see the next section. 
 
@@ -75,19 +74,18 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to adopt proved convolutional neural network (CNN) model architecture to train on image datasets from driving simulator. The objective of the model is to map raw pixels from 3 front-facing cameras (center, left, right) and predict appropreated steering commands.
+The overall strategy for deriving a model architecture was to adopt proved convolutional neural network (CNN) model architecture to train on image datasets from the driving simulator. The objective of the model is to map raw pixels from 3 front-facing cameras (center, left, right) and predict appropriate steering commands.
 
-My first step was to use a convolution neural network model similar to the NVidia CNN Model Architecture I thought this model might be appropriate because it is an end-to-end approach that proves effective. With the minimum training information from human systems.
-Learn to drive in local street traffic with or without a marker and on highways.
+My first step was to use a convolution neural network model similar to the NVidia CNN Model Architecture I thought this model might be appropriate because it is an end-to-end approach that proves effective. With the minimum training information from human systems. Learn to drive in local street traffic with or without a marker and on highways.
 
-In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
+To gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting.
 
-To combat the overfitting, I modified the model so that To combat the overfitting, I modified the model so that added dropout layers that can reduce the validation loss. However, gap between loss in training and validation is still significant difference, which shows that the model can not generalize enough to handle new inputs.Thus, I tried to add more datasets, including bad driving behavior, and the vehicle recovering from the side road into the final datasets.
+To combat the overfitting, I modified the model so that To combat the overfitting, and I changed the model so that added dropout layers that can reduce the validation loss. However, the gap between loss in training and validation is still a significant difference, which shows that the model can not generalize enough to handle new inputs.Thus, I tried to add more datasets, including lousy driving behavior, and the vehicle recovering from the side road into the final datasets.
 
-The final step was to run the simulator to see how well the car was driving around track one. There were a curvature spots where the vehicle fell off the track to improve the driving behavior in these cases, I added and image augmentations process in data preprocessing step and also record more data on specific weak spots. 
+The final step was to run the simulator to see how well the car was driving around track one. There were curvature spots where the vehicle fell off the road to improve the driving behavior in these cases, I added, and image augmentations process in data preprocessing step and also record more data on specific weak spots.
 
 
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+At the end of the process, the vehicle can drive autonomously around the track without leaving the road.
 
 #### 2. Final Model Architecture
 
@@ -130,8 +128,8 @@ Here is a visualization of the architecture:
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving.<br/>
-Here is an example images of center lane driving:
+To capture good driving behavior, I first recorded two laps on track one using center lane driving.
+Here are example images of center lane driving:
 
 ![counterclockwise_1](./figures/driving_log_L1.gif)
 ![counterclockwise_2](./figures/driving_log_L7.gif) <br/>
@@ -141,14 +139,14 @@ Poor driving behavior. <br/> <br/>
 ![counterclockwise_4](./figures/driving_log_L8_FIX.gif)<br/>
 Fix curvature road driving. <br/>
 
-I then recorded the vehicle recovering from the left side of the road back to center so that the vehicle would learn to recover when it off the track. This images show what a recovery looks like starting from side track and back to the road:
+I then recorded the vehicle recovering from the left side of the road back to center so that the car would learn to recover when it off the track. These images show what a recovery looks like starting from sidetrack and back to the road: 
 ![recover_left](./figures/recover_left.gif)
 
 
 ![raw_data](./figures/org_dataset.jpg)
 <p align="center">Histogram of 23,790 steering angles and Density curve.</p>
 
-To augment the dataset, I used the transformation_pipline function for processing image augmentations as in table below:
+To augment the dataset, I used the transformation_pipline function for processing image augmentations as in the table below:
 
 |         Augment Methods         |                                 Description                                    | 
 |:--------------------------------| :------------------------------------------------------------------------------| 
@@ -166,18 +164,16 @@ To augment the dataset, I used the transformation_pipline function for processin
 ![traslate_img](./figures/transform_img_2.jpg)<br/>
 ![noisy_img](./figures/noisy_img.jpg)<br/>
 
-Based on the estimation, the total number of data generated from the generator is 250,015 data points.
+Based on the estimation, the total number of data generated from the generator is 250,015 data points. 
 ![estimated_data](./figures/generator_dataset.jpg)
 <p align="center"> Histogram of 250,015 steering angles and Density curve (Estimated Generator's Dataset).</p>
 
-I finally randomly shuffled the dataset and put 20% of the data into a validation set.
-After the preserved 20% of data for validation set, I had 19,032 number of training data points. 
-I then preprocessed this data by using generator function. The generator performs image augmentation for each batch then pass the data to do image cropping and zero mean normailzation in first 2 layers of the network.
+I finally randomly shuffled the dataset and put 20% of the data into a validation set. After the preserved 20% of data for validation set, I had 19,032 number of training data points. I then preprocessed this data by using generator function. The generator performs image augmentation for each batch then pass the data to do image cropping, and zero mean normalization in first two layers of the network.
 
 
  
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 10 as evidenced by the val_loss and loss seem to converge at 10 epochs which shown in the chart below. I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or underfitting. The ideal number of epochs was ten as evidenced by the val_loss and loss seem to converge at 10 epochs which shown in the chart below. I used an Adam optimizer so that manually training the learning rate wasn't necessary.
 
-![loss_chart](./losses.jpg)
+![loss_chart](./figures/losses.jpg)
 Validation Loss vs. Training Loss during training process.
