@@ -160,8 +160,7 @@ To augment the dataset, I used the transformation_pipline function for processin
 
 
 ![original_img](./original_img.jpg)![left_flip](./left_flip.jpg)![right_flip](./right_flip.jpg)
-<p style="text-align: center;"> Flip left and right view: corrected steering angle -steering angle</p>.
-
+<p align="center">Flip left and right view: corrected steering angle -steering angle</p>
 ![alt text][image7]
 Random shearing: corrected steering angle: -1.0°
 
