@@ -48,7 +48,7 @@ Ref:
 The model contains dropout layers in order to reduce overfitting (model.py lines 396, 405).<br/>
 In image augmentation processes, it have a process of adding noise to inputs randomly like to forcing the network to not change the output in the wide range of inputs, and also contains the poor driving behavior training dataset so the model can learn variety inputs that generate the same output. These adds robustness against overfitting to the model.
 
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 542). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
+The model was trained and validated on different datasets to ensure that the model was not overfitting (code line 542). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 
 #### 3. Model parameter tuning
@@ -82,7 +82,7 @@ Learn to drive in local street traffic with or without a marker and on highways.
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model so that To combat the overfitting, I modified the model so that added dropout layers that can reduce the validation loss. However, gap between loss in training and validation is still significant difference, which shows that the model can not generalize enough to handle new inputs.Thus, I tried to add more data sets, including bad driving behavior, and the vehicle recovering from the side road into the final datasets.
+To combat the overfitting, I modified the model so that To combat the overfitting, I modified the model so that added dropout layers that can reduce the validation loss. However, gap between loss in training and validation is still significant difference, which shows that the model can not generalize enough to handle new inputs.Thus, I tried to add more datasets, including bad driving behavior, and the vehicle recovering from the side road into the final datasets.
 
 The final step was to run the simulator to see how well the car was driving around track one. There were a curvature spots where the vehicle fell off the track to improve the driving behavior in these cases, I added and image augmentations process in data preprocessing step and also record more data on specific weak spots. 
 
@@ -148,16 +148,28 @@ I then recorded the vehicle recovering from the left side of the road back to ce
 ![raw_data](./org_dataset.jpg)
 Histogram of 23,790 steering angles and Density curve.
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the dataset, I used the transformation_pipline function for processing image augmentations as in table below:
+
+|         Augment Methods         |                                 Description                                    | 
+|:--------------------------------| :------------------------------------------------------------------------------| 
+| Flip                            | Flip center view to left and right view and then correct steering angle        |
+| Random Perspective Transform    | Ramdomly perform perspective transformation                                    |
+| Random Rotate                   | Ramdomly perform rotation transformation                                       |
+| Random Translate                | Ramdomly perform shift transformation                                          |
+| Random Noise Adding             | Ramdomly perform noise adding                                                  |
 
 
-![alt text][image6]
+![original_img](./original_img.jpg)![left_flip](./left_flip.jpg)![right_flip](./right_flip.jpg)
+<p style="text-align: center;"> Flip left and right view: corrected steering angle -steering angle</p>.
+
 ![alt text][image7]
+Random shearing: corrected steering angle: -1.0°
+
 
 Etc ....
 
 
-I finally randomly shuffled the data set and put 20% of the data into a validation set.
+I finally randomly shuffled the dataset and put 20% of the data into a validation set.
 
 After the preserved 20% of data for validation set, I had 19,032 number of training data points. 
 I then preprocessed this data by using generator function. The generator performs image augmentation for each batch then pass the data to do image cropping and zero mean normailzation in first 2 layers of the network.
