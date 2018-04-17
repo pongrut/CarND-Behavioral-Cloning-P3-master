@@ -130,21 +130,22 @@ Here is a visualization of the architecture:
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I first recorded two laps on track one using center lane driving.<br/>
+Here is an example images of center lane driving:
 
 ![counterclockwise_1](./driving_log_L1.gif)
 ![counterclockwise_2](./driving_log_L7.gif) <br/>
-Normal driving behavior<br/>
+Normal driving behavior of both directions.<br/> <br/>
 ![counterclockwise_3](./driving_log_L3.gif) <br/>
-Poor driving behavior <br/>
+Poor driving behavior. <br/> <br/>
 ![counterclockwise_4](./driving_log_L8_FIX.gif)<br/>
-Fix curvature road driving <br/>
+Fix curvature road driving. <br/>
 
 I then recorded the vehicle recovering from the left side of the road back to center so that the vehicle would learn to recover when it off the track. This images show what a recovery looks like starting from side track and back to the road:
 ![recover_left](./recover_left.gif)
 
-![raw_data](./org_dataset.jpg)
-Then I repeated this process on track two in order to get more data points.
+
+
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
@@ -155,7 +156,8 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 Etc ....
 
 After the collection process, I had X number of data points. I then preprocessed this data by ...
-
+![raw_data](./org_dataset.jpg)
+<img src="./org_dataset.jpg" alt="raw_data" style="width: 200px;"/>
 
 I finally randomly shuffled the data set and put Y% of the data into a validation set. 
 
