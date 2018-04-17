@@ -167,11 +167,10 @@ To augment the dataset, I used the transformation_pipline function for processin
 ![noisy_img](./figures/noisy_img.jpg)<br/>
 
 
-Etc ....
-
+![estimated_data](./figures/generator_dataset.jpg)
+<p align="center"> Histogram of 250,015 steering angles and Density curve (Estimated Generator's Dataset).</p>
 
 I finally randomly shuffled the dataset and put 20% of the data into a validation set.
-
 After the preserved 20% of data for validation set, I had 19,032 number of training data points. 
 I then preprocessed this data by using generator function. The generator performs image augmentation for each batch then pass the data to do image cropping and zero mean normailzation in first 2 layers of the network.
 
