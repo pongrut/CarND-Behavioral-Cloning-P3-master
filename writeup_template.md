@@ -159,12 +159,12 @@ To augment the dataset, I used the transformation_pipline function for processin
 | Random Noise Adding             | Ramdomly perform noise adding                                                  |
 
 
-![original_img](./original_img.jpg)<br/>
-![flipped_img](./flipped_img.jpg)<br/>
-![perspective_img](./transform_img_0.jpg)<br/>
-![rotate_img](./transform_img_1.jpg)<br/>
-![traslate_img](./transform_img_2.jpg)<br/>
-![noisy_img](./noisy_img.jpg)<br/>
+![original_img](./figures/original_img.jpg)<br/>
+![flipped_img](./figures/flipped_img.jpg)<br/>
+![perspective_img](./figures/transform_img_0.jpg)<br/>
+![rotate_img](./figures/transform_img_1.jpg)<br/>
+![traslate_img](./figures/transform_img_2.jpg)<br/>
+![noisy_img](./figures/noisy_img.jpg)<br/>
 
 
 Etc ....
