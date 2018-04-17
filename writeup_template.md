@@ -97,7 +97,6 @@ The final model architecture (model.py lines 370-408) consisted of a convolution
 |:-------------------------------------------|:---------------------------------------------:| 
 | Input         	                      	    | 160x320x3 RGB image   					          		| 
 | cropping2d_1 (Cropping2D)                 	| cropping=((60,25), (0,0)),  outputs 75x320x3 	|
-| lambda_1 (Resize to 66x200x3)             	| outputs 66x200x3                            	|
 | lambda_2 (Normalization & Zero Mean)      	| outputs 66x200x3                            	|
 | conv2d_1 (Convolution 5x5)	                | 2x2 stride, elu activation, outputs 31x98x24  |
 | batch_normalization_1 (Batch Normalization) | outputs 31x98x24                              |
@@ -124,7 +123,7 @@ The final model architecture (model.py lines 370-408) consisted of a convolution
 |					            	|											|
 |				            		|											|
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+Here is a visualization of the architecture:
 ![NVIDIA CNN Model Architecture](./NVIDIA_CNN_Model_Architecture.jpg)
 
 [NVidia CNN Model Architecture](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)
