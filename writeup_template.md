@@ -85,17 +85,17 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to adopt proved convolutional neural network (CNN) model architecture to train on image datasets from driving simulator. The objective of the model is to map raw pixels from 3 front-facing cameras (center, left, right) and predict appropreated steering commands.
 
-My first step was to use a convolution neural network model similar to the NVidia CNN Model Architecture I thought this model might be appropriate because ...
+My first step was to use a convolution neural network model similar to the NVidia CNN Model Architecture I thought this model might be appropriate because it is an end-to-end approach that proves effective. With the minimum training information from human systems.
+Learn to drive in local street traffic with or without a marker and on highways.
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model so that ...
+To combat the overfitting, I modified the model so that To combat the overfitting, I modified the model so that added dropout layers that can reduce the validation loss. However, gap between loss in training and validation is still significant difference, which shows that the model can not generalize enough to handle new inputs.Thus, I tried to add more data sets, including bad driving behavior, and the vehicle recovering from the side road into the final datasets.
 
-Then I ... 
+The final step was to run the simulator to see how well the car was driving around track one. There were a curvature spots where the vehicle fell off the track to improve the driving behavior in these cases, I added and image augmentations process in data preprocessing step and also record more data on specific weak spots. 
 
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
