@@ -176,4 +176,4 @@ I finally randomly shuffled the dataset and put 20% of the data into a validatio
 I used this training data for training the model. The validation set helped determine if the model was over or underfitting. The ideal number of epochs was ten as evidenced by the val_loss and loss seem to converge at 10 epochs which shown in the chart below. I used an Adam optimizer so that manually training the learning rate wasn't necessary.
 
 ![loss_chart](./figures/losses.jpg)
-Validation Loss vs. Training Loss during training process.
+<p align="center">Validation Loss vs. Training Loss during training process.</p>
