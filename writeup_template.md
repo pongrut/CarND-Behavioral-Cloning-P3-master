@@ -124,7 +124,7 @@ The final model architecture (model.py lines 370-408) consisted of a convolution
 |				            		|											|
 
 Here is a visualization of the architecture:
-![NVIDIA CNN Model Architecture](./NVIDIA_CNN_Model_Architecture.jpg)
+![NVIDIA CNN Model Architecture](./figures/NVIDIA_CNN_Model_Architecture.jpg)
 
 [NVidia CNN Model Architecture](https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)
 
@@ -133,19 +133,19 @@ Here is a visualization of the architecture:
 To capture good driving behavior, I first recorded two laps on track one using center lane driving.<br/>
 Here is an example images of center lane driving:
 
-![counterclockwise_1](./driving_log_L1.gif)
-![counterclockwise_2](./driving_log_L7.gif) <br/>
+![counterclockwise_1](./figures/driving_log_L1.gif)
+![counterclockwise_2](./figures/driving_log_L7.gif) <br/>
 Normal driving behavior of both directions.<br/> <br/>
-![counterclockwise_3](./driving_log_L3.gif) <br/>
+![counterclockwise_3](./figures/driving_log_L3.gif) <br/>
 Poor driving behavior. <br/> <br/>
-![counterclockwise_4](./driving_log_L8_FIX.gif)<br/>
+![counterclockwise_4](./figures/driving_log_L8_FIX.gif)<br/>
 Fix curvature road driving. <br/>
 
 I then recorded the vehicle recovering from the left side of the road back to center so that the vehicle would learn to recover when it off the track. This images show what a recovery looks like starting from side track and back to the road:
-![recover_left](./recover_left.gif)
+![recover_left](./figures/recover_left.gif)
 
 
-![raw_data](./org_dataset.jpg)
+![raw_data](./figures/org_dataset.jpg)
 <p align="center">Histogram of 23,790 steering angles and Density curve.</p>
 
 To augment the dataset, I used the transformation_pipline function for processing image augmentations as in table below:
