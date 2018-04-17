@@ -159,17 +159,19 @@ To augment the dataset, I used the transformation_pipline function for processin
 | Random Noise Adding             | Ramdomly perform noise adding                                                  |
 
 
-![original_img](./original_img.jpg)
-![flipped_img](./flipped_img.jpg) <br/>
-<p align="center">Flip view: corrected steering angle -steering angle</p>
+![original_img](./original_img.jpg)<br/>
+<p align="left"Original Image</p><br/>
+![flipped_img](./flipped_img.jpg)<br/>
+<p align="left">Flip view: corrected steering angle -steering angle</p><br/>
 ![perspective_img](./transform_img_0.jpg)<br/>
-<p align="center">Random Perspective Transform: corrected steering angle: -1.0°</p>
+<p align="left">Random Perspective Transform: corrected steering angle: -1.0°</p><br/>
 ![rotate_img](./transform_img_1.jpg)<br/>
-<p align="center">Random Rotate Transform: corrected steering angle: -1.0°</p>
+<p align="left">Random Rotate Transform: corrected steering angle: -1.0°</p><br/>
 ![traslate_img](./transform_img_2.jpg)<br/>
-<p align="center">Random Translate Transform: corrected steering angle: -1.0°</p>
+<p align="center">Random Translate Transform: corrected steering angle: -1.0°</p><br/>
 ![noisy_img](./noisy_img.jpg)<br/>
-<p align="center">Random Noise Adding: corrected steering angle: -1.0°</p>
+<p align="left">Random Noise Adding: corrected steering angle: -1.0°</p><br/>
+
 Etc ....
 
 
