@@ -54,7 +54,7 @@ The model.py file contains the code for training and saving the convolution neur
 
 #### 1. An appropriate model architecture has been employed
 
-My model consists of 1 Cropping2D layer for cropping input images to 75x320x3 shape and 2 Keras lamda layers for resizing to 66x200x3 and then zero-mean normalization. There are five convolution neural layers with 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines xx-yy) then the Flatten layer, after that four fully connected layer and finally the output layer (code lines xx-yy).
+My model consists of 1 Cropping2D layer for cropping input images to 75x320x3 shape and 2 Keras lamda layers for resizing to 66x200x3 and then zero-mean normalization. There are five convolution neural layers with 5x5 and 3x3 filter sizes and depths between 24 and 64 (model.py lines 385-394) then the Flatten layer, after that four fully connected layer and finally the output layer (code lines 395-406).
 
 The model includes elu layers to introduce nonlinearity, and the input data of each layer is normalized by Batch normalization layers to reduce the amount by what the hidden unit values shift around (covariance shift).<br/>
 
@@ -64,13 +64,15 @@ Ref:
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
+The model contains dropout layers in order to reduce overfitting (model.py lines 396, 405).
+In image augmentation processes, it also have a process of adding noise to inputs randomly like to forcing the network to not change the output in the wide range of inputs. It adds robustness against overfitting to the model.
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
+
 #### 3. Model parameter tuning
 
-The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
+The model used an adam optimizer with default learning rate, so the learning rate was not tuned manually (model.py line 447).
 
 #### 4. Appropriate training data
 
