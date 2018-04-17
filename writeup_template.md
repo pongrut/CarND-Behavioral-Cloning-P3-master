@@ -74,6 +74,15 @@ The model was trained and validated on different data sets to ensure that the mo
 
 The model used an adam optimizer with default learning rate, so the learning rate was not tuned manually (model.py line 447).
 
+|     Hyper Parameters      |     Value      |                      Remark                    | 
+|:--------------------------|:--------------:| :----------------------------------------------| 
+| Epochs                    |       15  	   | Normal case 10 epochs should be enough         |
+| Learning Rate             |      0.001 	   | default value of Adam optimizer                |
+| Batch Size                |       32   	   | It can be increase depend on computer resource |
+| Matric                    |      Loss  	   | Steering angle is continuous number, the accuracy is not appropriate for measurement |
+| Loss Type                 |       MSE      | Mean Squared Error                             |
+| Optimizer                 |      Adam      | Benefit from adaptive learning rate            |
+
 #### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. 
